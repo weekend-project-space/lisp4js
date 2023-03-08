@@ -50,7 +50,16 @@
         let app = createApp({
             setup() {
                 
-                const value = ref(JSON.parse(localStorage.getItem('value'))||[]);
+                const value = ref(JSON.parse(localStorage.getItem('value'))||
+                ` ( 
+                        (write-line 'hello lisp')
+                        (define g  (lambda (x) (+ x x)) )
+                        (define a  (list 1 2 3 4 5 6))
+                        (define g (lambda(x)(+ x x)))
+                        (write-line (map a g))
+                        (write-line (reduce a (lambda (x y) (+ x y))))
+                        (define p (prompt 'hello'))
+                        (alert  p))`);
                 const output = ref([]);
 
                 const submit = () => {
