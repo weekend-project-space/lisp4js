@@ -29,6 +29,10 @@
         .mt-3{
             margin-top: 1.5em;
         }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"></script>
@@ -38,7 +42,12 @@
 <body>
 
     <div id="app" class="warp">
-        <h1>lisp4js</h1>
+        <div class="flex">
+        <h1>Lisp4js </h1>
+
+            <a href="https://github.com/weekend-project-space/lisp4js">source code</a>
+        </div>
+       
         <textarea class="form-control" v-model="value" rows="9"></textarea>
         <button class="btn btn-primary mt-3" @click="submit">eval</button>
         <ul class="output mt-3">
